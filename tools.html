@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logistics Tools & CBM Calculator - The Indus Group</title>
+  <meta name="description" content="Calculate cubic volume (CBM) and volumetric weight for your air and sea freight shipments with our interactive logistics tools.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Floating Call & WhatsApp Buttons -->
+  <div class="floating-actions">
+    <a href="https://wa.me/917011332238" target="_blank" class="float-btn float-whatsapp" aria-label="Chat on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:+917011332238" class="float-btn float-call" aria-label="Call Us Now">
+      <i class="fas fa-phone"></i>
+    </a>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <a href="index.html" class="logo">
+        <svg width="40" height="40" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="500" rx="100" fill="#0A1128"/>
+          <path d="M120 120H380V170H280V380H220V170H120V120Z" fill="#D90429"/>
+          <path d="M150 150H350V190H260V350H240V190H150V150Z" fill="#FF9F1C" opacity="0.8"/>
+        </svg>
+        <div class="logo-text">
+          INDUS GROUP
+          <span>GLOBAL SOLUTIONS</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li class="nav-item"><a href="about.html" class="nav-link">Who We Are</a></li>
+          <li class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle">Businesses <i class="fas fa-chevron-down" style="font-size:0.75rem; margin-left:4px;"></i></a>
+            <ul class="dropdown-menu">
+              <li class="dropdown-item"><a href="logistics.html">Integrated Logistics Solutions</a></li>
+              <li class="dropdown-item"><a href="enterprises.html">Enterprise Solutions</a></li>
+              <li class="dropdown-item"><a href="skills.html">Skill Development Solutions</a></li>
+              <li class="dropdown-item"><a href="realestate.html">Real Estate Solutions</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="kc.html" class="nav-link">Knowledge Center</a></li>
+          <li class="nav-item"><a href="resourses.html" class="nav-link">Resources</a></li>
+          <li class="nav-item"><a href="tools.html" class="nav-link active">Tools</a></li>
+          <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:+917011332238" class="btn-phone">
+          <i class="fas fa-phone-alt"></i> +91 7011332238
+        </a>
+        <button class="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Inner Hero -->
+  <section class="inner-hero">
+    <div class="container inner-hero-container">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li>Tools</li>
+      </ul>
+      <h1>Interactive Logistics Tools</h1>
+      <p style="color: var(--text-light-muted); max-width: 600px; font-size:1.1rem;">Plan your freight expenses accurately with our interactive volumetric calculators.</p>
+    </div>
+  </section>
+
+  <!-- Interactive CBM Calculator -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title center">CBM & Volumetric Weight Calculator</h2>
+        <p class="section-subtitle">Determine the Cubic Meter (CBM) and billable Volumetric Weight for air and sea freight.</p>
+      </div>
+
+      <div class="contact-section-grid" style="margin-top: 50px;">
+        <!-- Calculator Inputs -->
+        <div class="contact-form-panel">
+          <h3 class="form-title"><i class="fas fa-box"></i> Package Dimensions</h3>
+          <p style="margin-bottom:20px; font-size:0.9rem; color:var(--text-dark-muted);">Enter your carton or pallet dimensions below to compute the shipping volume.</p>
+          
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+            <div class="form-group">
+              <input type="number" id="calc-length" class="form-control" placeholder=" " min="0" value="0">
+              <label for="calc-length" class="form-label">Length</label>
+            </div>
+            <div class="form-group">
+              <input type="number" id="calc-width" class="form-control" placeholder=" " min="0" value="0">
+              <label for="calc-width" class="form-label">Width</label>
+            </div>
+            <div class="form-group">
+              <input type="number" id="calc-height" class="form-control" placeholder=" " min="0" value="0">
+              <label for="calc-height" class="form-label">Height</label>
+            </div>
+            <div class="form-group">
+              <input type="number" id="calc-qty" class="form-control" placeholder=" " min="1" value="1">
+              <label for="calc-qty" class="form-label">Quantity</label>
+            </div>
+          </div>
+          
+          <div class="form-group" style="margin-top: 15px;">
+            <select id="calc-unit" class="form-control" style="padding:15px; color:var(--secondary-blue); font-weight:600; cursor:pointer;">
+              <option value="cm">Centimeters (cm)</option>
+              <option value="m">Meters (m)</option>
+              <option value="in">Inches (in)</option>
+            </select>
+          </div>
+          
+          <button id="calc-btn" class="btn btn-primary" style="width:100%; margin-top:10px;"><i class="fas fa-calculator"></i> Calculate Volume</button>
+        </div>
+
+        <!-- Calculator Results -->
+        <div class="contact-info-panel" style="background-color: var(--dark-bg); color: white; display:flex; flex-direction:column; justify-content:center;">
+          <h3 style="color: white; margin-bottom: 30px;"><i class="fas fa-poll-h"></i> Calculation Results</h3>
+          
+          <div style="background-color: rgba(255,255,255,0.05); padding: 25px; border-radius: var(--radius-md); border-left: 4px solid var(--accent-orange); margin-bottom: 20px;">
+            <p style="font-size: 0.9rem; color: var(--text-light-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Total Volume (CBM)</p>
+            <div style="font-size: 3rem; font-weight: 800; color: white;">
+              <span id="result-cbm">0.0000</span> <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-light-muted);">m³</span>
+            </div>
+          </div>
+
+          <div style="background-color: rgba(255,255,255,0.05); padding: 25px; border-radius: var(--radius-md); border-left: 4px solid var(--primary-red);">
+            <p style="font-size: 0.9rem; color: var(--text-light-muted); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;">Air Volumetric Weight</p>
+            <div style="font-size: 2.5rem; font-weight: 800; color: white;">
+              <span id="result-weight">0.00</span> <span style="font-size: 1.2rem; font-weight: 500; color: var(--text-light-muted);">kg</span>
+            </div>
+            <p style="font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-top: 10px;">*Based on standard 1 CBM = 167 kg air freight conversion ratio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Container Types Reference Grid -->
+  <section class="section-padding bg-dark-section">
+    <div class="container">
+      <div class="text-center">
+        <h2 class="section-title center" style="color: white;">Standard Container Capacities</h2>
+        <p class="section-subtitle" style="color: var(--text-light-muted);">Quick reference guide for FCL ocean shipments.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-top: 40px;">
+        <!-- Container 1 -->
+        <div style="background:var(--dark-bg-alt); padding:30px; border-radius:var(--radius-md); border:1px solid var(--border-dark); color:white; text-align:center;">
+          <i class="fas fa-truck-loading" style="font-size:2.5rem; color:var(--primary-red); margin-bottom:15px;"></i>
+          <h4 style="font-size:1.2rem; margin-bottom:10px;">20' Standard Dry</h4>
+          <p style="font-size:2rem; font-weight:700; color:var(--accent-orange); margin-bottom:10px;">33 <span style="font-size:1rem;">CBM</span></p>
+          <p style="font-size:0.85rem; color:var(--text-light-muted);">Max Load Approx: 28,000 kg</p>
+        </div>
+
+        <!-- Container 2 -->
+        <div style="background:var(--dark-bg-alt); padding:30px; border-radius:var(--radius-md); border:1px solid var(--border-dark); color:white; text-align:center;">
+          <i class="fas fa-truck-loading" style="font-size:2.5rem; color:var(--primary-red); margin-bottom:15px;"></i>
+          <h4 style="font-size:1.2rem; margin-bottom:10px;">40' Standard Dry</h4>
+          <p style="font-size:2rem; font-weight:700; color:var(--accent-orange); margin-bottom:10px;">67 <span style="font-size:1rem;">CBM</span></p>
+          <p style="font-size:0.85rem; color:var(--text-light-muted);">Max Load Approx: 28,000 kg</p>
+        </div>
+
+        <!-- Container 3 -->
+        <div style="background:var(--dark-bg-alt); padding:30px; border-radius:var(--radius-md); border:1px solid var(--border-dark); color:white; text-align:center;">
+          <i class="fas fa-truck-loading" style="font-size:2.5rem; color:var(--primary-red); margin-bottom:15px;"></i>
+          <h4 style="font-size:1.2rem; margin-bottom:10px;">40' High Cube</h4>
+          <p style="font-size:2rem; font-weight:700; color:var(--accent-orange); margin-bottom:10px;">76 <span style="font-size:1rem;">CBM</span></p>
+          <p style="font-size:0.85rem; color:var(--text-light-muted);">Max Load Approx: 28,000 kg</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <a href="index.html" class="logo footer-logo">
+          <svg width="32" height="32" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="500" height="500" rx="100" fill="#0A1128"/>
+            <path d="M120 120H380V170H280V380H220V170H120V120Z" fill="#D90429"/>
+            <path d="M150 150H350V190H260V350H240V190H150V150Z" fill="#FF9F1C" opacity="0.8"/>
+          </svg>
+          <div class="logo-text">
+            INDUS GROUP
+            <span>GLOBAL SOLUTIONS</span>
+          </div>
+        </a>
+        <p>Delivering industry-leading solutions across verticals with reliability, innovation, and integrity. We serve enterprises with precision and commitment.</p>
+      </div>
+      
+      <div>
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="about.html">Who We Are</a></li>
+          <li><a href="kc.html">Knowledge Center</a></li>
+          <li><a href="resourses.html">Resources</a></li>
+          <li><a href="tools.html">Tools</a></li>
+          <li><a href="career.html">Careers</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Our Businesses</h4>
+        <ul class="footer-links">
+          <li><a href="logistics.html">Integrated Logistics</a></li>
+          <li><a href="enterprises.html">Enterprise Solutions</a></li>
+          <li><a href="skills.html">Skill Development</a></li>
+          <li><a href="realestate.html">Real Estate Solutions</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-title">Contact Us</h4>
+        <ul class="footer-links">
+          <li class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i>
+            <div>
+              <a href="tel:+917011332238">+91 7011332238</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <a href="mailto:info@theindusgroup.com">info@theindusgroup.com</a><br>
+              <a href="mailto:theindusgroup@outlook.com" style="font-size:0.85rem; opacity:0.8;">theindusgroup@outlook.com</a>
+            </div>
+          </li>
+          <li class="footer-contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <div>
+              <span>New Delhi, India</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <div>
+        &copy; 2026 The Indus Group of Co. All rights reserved.
+      </div>
+      <div class="footer-legal-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="t&c.html">Terms & Conditions</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
